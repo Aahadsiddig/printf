@@ -1,43 +1,43 @@
 #include "main.h"
 
 /**
- * print_octal - Prints an unsigned number in octal notation
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
+ * print_octal - a function that prints an unsigned number in octal
+ * @types: a List of arguments in the func
+ * @buffer: a buffer array in the func
+ * @flags: it Calculates active flags in the func
+ * @width: finds width of the func
+ * @precision: finds a precision
+ * @size: finds a size
+ * Return: a number of charactors that wil be printed
 */
 
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 
-	int i = BUFF_SIZE - 2;
-	unsigned long int num = va_arg(types, unsigned long int);
-	unsigned long int init_num = num;
+	int x = BUFF_SIZE - 2;
+	unsigned long int un = va_arg(types, unsigned long int);
+	unsigned long int un2 = un;
 
 	UNUSED(width);
 
-	num = convert_size_unsgnd(num, size);
+	un = convert_size_unsgnd(un, size);
 
-	if (num == 0)
-		buffer[i--] = '0';
+	if (un == 0)
+		buffer[x--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
-	while (num > 0)
+	while (un > 0)
 	{
-		buffer[i--] = (num % 8) + '0';
-		num /= 8;
+		buffer[x--] = (un % 8) + '0';
+		un /= 8;
 	}
 
-	if (flags & F_HASH && init_num != 0)
-		buffer[i--] = '0';
+	if (flags & F_HASH && un2 != 0)
+		buffer[x--] = '0';
 
-	i++;
+	x++;
 
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
 }
