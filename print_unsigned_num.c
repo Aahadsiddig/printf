@@ -1,36 +1,36 @@
 #include "main.h"
 
 /**
- * print_unsigned - Prints an unsigned number
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed.
+ * print_unsigned - a funcction that prints an unsigned number
+ * @types: a list of arguments n the func
+ * @buffer: a buffer array
+ * @flags: it Calculates active flags in the func
+ * @width: finds width of the func
+ * @precision: gets precision
+ * @size: gets size
+ * Return: a number of chars that will be printed.
 */
 
 int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	int i = BUFF_SIZE - 2;
-	unsigned long int num = va_arg(types, unsigned long int);
+	int x = BUFF_SIZE - 2;
+	unsigned long int un = va_arg(types, unsigned long int);
 
-	num = convert_size_unsgnd(num, size);
+	un = convert_size_unsgnd(un, size);
 
-	if (num == 0)
-		buffer[i--] = '0';
+	if (un == 0)
+		buffer[x--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
-	while (num > 0)
+	while (un > 0)
 	{
-		buffer[i--] = (num % 10) + '0';
-		num /= 10;
+		buffer[x--] = (un % 10) + '0';
+		un /= 10;
 	}
 
-	i++;
+	x++;
 
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
 }
