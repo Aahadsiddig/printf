@@ -1,22 +1,23 @@
 #include "main.h"
 
 /**
- * print_binary - Prints an unsigned number
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of char printed.
+ * print_binary - a finction that prints an unsigned number
+ * @types: a list of arguments in the function
+ * @buffer: a buffer array
+ * @flags: it Calculates active flags in the func
+ * @width: finds width of the function
+ * @precision: finds precision
+ * @size: finds size
+ * Return: a numbers of charactors that will be printed.
 */
 
 int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	unsigned int n, m, i, sum;
-	unsigned int a[32];
-	int count;
+	unsigned int x, y, j, add;
+	unsigned int z[32];
+	int counter;
+	char c;
 
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -24,25 +25,25 @@ int print_binary(va_list types, char buffer[],
 	UNUSED(precision);
 	UNUSED(size);
 
-	n = va_arg(types, unsigned int);
-	m = 2147483648; /* (2 ^ 31) */
-	a[0] = n / m;
-	for (i = 1; i < 32; i++)
+	x = va_arg(types, unsigned int);
+	y = 2147483648;
+	z[0] = x / y;
+	for (j = 1; j < 32; j++)
 	{
-		m /= 2;
-		a[i] = (n / m) % 2;
+		y /= 2;
+		z[j] = (x / y) % 2;
 	}
-	for (i = 0, sum = 0, count = 0; i < 32; i++)
+	for (j = 0, add = 0, counter = 0; j < 32; j++)
 	{
-		sum += a[i];
-		if (sum || i == 31)
+		add += z[j];
+		if (add || j == 31)
 		{
-			char z = '0' + a[i];
+			c = '0' + z[j];
 
-			write(1, &z, 1);
-			count++;
+			write(1, &c, 1);
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
 
