@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * convert_size_unsgnd - Casts a number to the specified size
- * @num: Number to be casted
- * @size: Number indicating the type to be casted
- * Return: Casted value of num
+ * convert_size_unsgnd - a function that turns a number
+ *	to the specified size
+ * @num: a number to be turned
+ * @size: a number sees the type to be turned
+ * Return: value of num that will be turned
 */
 
 long int convert_size_unsgnd(unsigned long int num, int size)
