@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * write_unsgnd - a function that Writes an unsigned number
+ * write_unsign - a function that Writes an unsigned number
  * @is_negative: sees if the num is negative
  * @ind: an Index at which the number starts in the buffer of the func
  * @buffer: Array of charactors
@@ -12,7 +12,7 @@
  * Return: a number of chars that will be written
 */
 
-int write_unsgnd(int is_negative, int ind,
+int write_unsign(int is_negative, int ind,
 	char buffer[],
 	int flags, int width, int precision, int size)
 {

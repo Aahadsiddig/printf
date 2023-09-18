@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_int - a function that prints integer
+ * _int - a function that prints integer
  * @types: a List of arguments of function
  * @buffer: a buffer array
  * @flags: it Calculates active flags of the func
@@ -11,7 +11,7 @@
  * Return: a number of charactors that will be printed
 */
 
-int print_int(va_list types, char buffer[],
+int _int(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int x = BUFF_SIZE - 2;
@@ -19,7 +19,7 @@ int print_int(va_list types, char buffer[],
 	long int z = va_arg(types, long int);
 	unsigned long int un;
 
-	z = convert_size_number(z, size);
+	z = u_numsize(z, size);
 
 	if (z == 0)
 		buffer[x--] = '0';
@@ -41,6 +41,6 @@ int print_int(va_list types, char buffer[],
 
 	x++;
 
-	return (write_number(negative, x, buffer, flags, width, precision, size));
+	return (write_num(negative, x, buffer, flags, width, precision, size));
 }
 

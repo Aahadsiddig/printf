@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * write_number - a function that Prints a string
+ * write_num - a function that Prints a string
  * @is_negative: a List of arguments in the function
  * @ind: char
  * @buffer: a Buffer array
@@ -12,7 +12,7 @@
  * Return: a number of chars that will be printed.
 */
 
-int write_number(int is_negative, int ind, char buffer[],
+int write_num(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int len = BUFF_SIZE - ind - 1;
@@ -29,6 +29,6 @@ int write_number(int is_negative, int ind, char buffer[],
 	else if (flags & F_SPACE)
 		ch = ' ';
 
-	return (write_num(ind, buffer, flags, width, precision,
+	return (write_num_buffer(ind, buffer, flags, width, precision,
 		len, p, ch));
 }

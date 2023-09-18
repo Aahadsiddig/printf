@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_hexa - a function that Prints a hexadecimal number
+ * _hexa - a function that Prints a hexadecimal number
  *	in lowercase or uppercase
  * @types: a list of arguments of the func
  * @map_to: An array of values
@@ -14,7 +14,7 @@
  * Return: a number of chars that will be printed
 */
 
-int print_hexa(va_list types, char map_to[], char buffer[],
+int _hexa(va_list types, char map_to[], char buffer[],
 	int flags, char flag_ch, int width, int precision, int size)
 {
 	int x = BUFF_SIZE - 2;
@@ -23,7 +23,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 	UNUSED(width);
 
-	un = convert_size_unsgnd(un, size);
+	un = u_unsize(un, size);
 
 	if (un == 0)
 		buffer[x--] = '0';
@@ -44,5 +44,5 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 	x++;
 
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (write_unsign(0, x, buffer, flags, width, precision, size));
 }

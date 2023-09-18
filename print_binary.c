@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_binary - a finction that prints an unsigned number
+ * _binary - a finction that prints an unsigned number
  * @types: a list of arguments in the function
  * @buffer: a buffer array
  * @flags: it Calculates active flags in the func
@@ -11,7 +11,7 @@
  * Return: a numbers of charactors that will be printed.
 */
 
-int print_binary(va_list types, char buffer[],
+int _binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	unsigned int x, y, j, add;

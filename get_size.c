@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * get_size - a function that Calculates the size of argument
+ * _size - a function that Calculates the size of argument
  * @format: a Formatted string
  * @i: a List of arguments that will be printed.
  * Return: size (s).
 */
 
-int get_size(const char *format, int *i)
+int _size(const char *format, int *i)
 {
 	int c_i = *i + 1;
 	int s = 0;

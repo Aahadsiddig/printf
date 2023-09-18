@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * append_hexa_code - a function that turns ascci codes
+ * u_hexa_code - a function that turns ascci codes
  *	in hexadecimal code to buffer
  * @buffer: Array of charactars
  * @i: an Index
@@ -9,7 +9,7 @@
  * Return: Always 3
  */
 
-int append_hexa_code(char ascii_code, char buffer[], int i)
+int u_hexa_code(char ascii_code, char buffer[], int i)
 {
 	char ch[] = "0123456789ABCDEF";
 

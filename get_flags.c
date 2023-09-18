@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * get_flags - a function that Calculates active flags
+ * _flags - a function that Calculates active flags
  *	in the function
  * @format: Formatted string
  * @i: a parameter that will be taken
  * Return: the Flags
 */
 
-int get_flags(const char *format, int *i)
+int _flags(const char *format, int *i)
 {
 	int x, c_i;
 	int f = 0;

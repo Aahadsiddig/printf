@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_unsigned - a funcction that prints an unsigned number
+ * _unsigned - a funcction that prints an unsigned number
  * @types: a list of arguments n the func
  * @buffer: a buffer array
  * @flags: it Calculates active flags in the func
@@ -11,13 +11,13 @@
  * Return: a number of chars that will be printed.
 */
 
-int print_unsigned(va_list types, char buffer[],
+int _unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int x = BUFF_SIZE - 2;
 	unsigned long int un = va_arg(types, unsigned long int);
 
-	un = convert_size_unsgnd(un, size);
+	un = u_unsize(un, size);
 
 	if (un == 0)
 		buffer[x--] = '0';
@@ -32,5 +32,5 @@ int print_unsigned(va_list types, char buffer[],
 
 	x++;
 
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (write_unsign(0, x, buffer, flags, width, precision, size));
 }

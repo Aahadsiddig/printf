@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_octal - a function that prints an unsigned number in octal
+ * _octal - a function that prints an unsigned number in octal
  * @types: a List of arguments in the func
  * @buffer: a buffer array in the func
  * @flags: it Calculates active flags in the func
@@ -11,7 +11,7 @@
  * Return: a number of charactors that wil be printed
 */
 
-int print_octal(va_list types, char buffer[],
+int _octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 
@@ -21,7 +21,7 @@ int print_octal(va_list types, char buffer[],
 
 	UNUSED(width);
 
-	un = convert_size_unsgnd(un, size);
+	un = u_unsize(un, size);
 
 	if (un == 0)
 		buffer[x--] = '0';
@@ -39,5 +39,5 @@ int print_octal(va_list types, char buffer[],
 
 	x++;
 
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (write_unsign(0, x, buffer, flags, width, precision, size));
 }
