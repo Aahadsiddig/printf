@@ -1,45 +1,45 @@
 #include "main.h"
 
 /**
- * print_reverse - Prints reverse string.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
+ * print_reverse - a function that Prints reverse strings
+ * @types: a List of arguments of the function
+ * @buffer: a Buffer array
+ * @flags: it Calculates active flags of the func
+ * @width: width of the func
+ * @precision: finds Precision specification of the func
+ * @size: finds Size specifier of the function
+ * Return: a Numbers of chars that printed in the fun
 */
 
 int print_reverse(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
-	char *str;
-	int i, count = 0;
+	char *st;
+	int x, counter = 0;
 
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(size);
 
-	str = va_arg(types, char *);
+	st = va_arg(types, char *);
 
-	if (str == NULL)
+	if (st == NULL)
 	{
 		UNUSED(precision);
 
-		str = ")Null(";
+		st = ")Null(";
 	}
-	for (i = 0; str[i]; i++)
+	for (x = 0; st[x]; x++)
 		;
 
-	for (i = i - 1; i >= 0; i--)
+	for (x = x - 1; x >= 0; x--)
 	{
-		char z = str[i];
+		char y = st[x];
 
-		write(1, &z, 1);
-		count++;
+		write(1, &y, 1);
+		counter++;
 	}
-	return (count);
+	return (counter);
 }
 

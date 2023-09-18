@@ -1,54 +1,54 @@
 #include "main.h"
 
 /**
- * print_rot13string - Print a string in rot13.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
+ * print_rot13string - a funcyion that Print a string in rote 13
+ * @types: a List of arguments of the func
+ * @buffer: Buffer array for the function
+ * @flags: it Calculates active flags of the function
+ * @width: width of the func
+ * @precision: finds Precision specification of the func
+ * @size: finds Size specifier of the func
+ * Return: Numbers of chars that printed in the func
 */
 
 int print_rot13string(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
-	char x;
-	char *str;
+	char c;
+	char *st;
 	unsigned int i, j;
-	int count = 0;
-	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int counter = 0;
+	char ch1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char ch2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	str = va_arg(types, char *);
+	st = va_arg(types, char *);
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
 
-	if (str == NULL)
-		str = "(AHYY)";
-	for (i = 0; str[i]; i++)
+	if (st == NULL)
+		st = "(AHYY)";
+	for (i = 0; st[i]; i++)
 	{
-		for (j = 0; in[j]; j++)
+		for (j = 0; ch1[j]; j++)
 		{
-			if (in[j] == str[i])
+			if (ch1[j] == st[i])
 			{
-				x = out[j];
-				write(1, &x, 1);
-				count++;
+				c = ch2[j];
+				write(1, &c, 1);
+				counter++;
 				break;
 			}
 		}
-		if (!in[j])
+		if (!ch1[j])
 		{
-			x = str[i];
-			write(1, &x, 1);
-			count++;
+			c = st[i];
+			write(1, &c, 1);
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
 

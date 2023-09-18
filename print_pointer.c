@@ -1,53 +1,52 @@
 #include "main.h"
 
 /**
- * print_pointer - Prints the value of a pointer variable
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed.
+ * print_pointer - a function that Prints the value of a pointer variable
+ * @types: a List of arguments of the function
+ * @buffer: Buffer array
+ * @flags: it Calculates active flags of the function
+ * @width: get width of the function
+ * @precision: a Precision specification of the function
+ * @size: a Size specifier of the function
+ * Return: Number of chars printed in the function
 */
 
 int print_pointer(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
-	char extra_c = 0, padd = ' ';
-	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
-	unsigned long num_addrs;
-	char map_to[] = "0123456789abcdef";
-	void *addrs = va_arg(types, void *);
+	char c = 0, p = ' ';
+	int i = BUFF_SIZE - 2, len = 2, p_start = 1;
+	unsigned long num_add;
+	char ch[] = "0123456789abcdef";
+	void *add = va_arg(types, void *);
 
 	UNUSED(width);
 	UNUSED(size);
 
-	if (addrs == NULL)
+	if (add == NULL)
 		return (write(1, "(nil)", 5));
 
 	buffer[BUFF_SIZE - 1] = '\0';
 	UNUSED(precision);
 
-	num_addrs = (unsigned long)addrs;
+	num_add = (unsigned long)add;
 
-	while (num_addrs > 0)
+	while (num_add > 0)
 	{
-		buffer[ind--] = map_to[num_addrs % 16];
-		num_addrs /= 16;
-		length++;
+		buffer[i--] = ch[num_add % 16];
+		num_add /= 16;
+		len++;
 	}
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
-		padd = '0';
+		p = '0';
 	if (flags & F_PLUS)
-		extra_c = '+', length++;
+		c = '+', len++;
 	else if (flags & F_SPACE)
-		extra_c = ' ', length++;
+		c = ' ', len++;
 
-	ind++;
+	i++;
 
-	return (write_pointer(buffer, ind, length,
-				width, flags, padd, extra_c, padd_start));
+	return (write_pointer(buffer, i, len,
+				width, flags, p, c, p_start));
 }
-

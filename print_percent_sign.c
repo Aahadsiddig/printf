@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_percent - Prints a percent sign
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
+ * print_percent - a function that Prints a percent sign
+ * @types: a List of arguments of the function
+ * @buffer: Buffer array
+ * @flags: it  Calculates active flags of the func
+ * @width: get width of the func
+ * @precision: Precision specification of the func
+ * @size: Size specifier of the function
+ * Return: Number of charactors printed in the func
 */
 
 int print_percent(va_list types, char buffer[],
