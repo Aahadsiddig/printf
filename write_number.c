@@ -1,34 +1,34 @@
 #include "main.h"
 
 /**
- * write_number - Prints a string
- * @is_negative: Lista of arguments
- * @ind: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- * Return: Number of chars printed.
+ * write_number - a function that Prints a string
+ * @is_negative: a List of arguments in the function
+ * @ind: char
+ * @buffer: a Buffer array
+ * @flags: it Calculates active flags of the function
+ * @width: finds width of the func
+ * @precision: finds a precision of the func
+ * @size: finds Size of the function
+ * Return: a number of chars that will be printed.
 */
 
 int write_number(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	int length = BUFF_SIZE - ind - 1;
-	char padd = ' ', extra_ch = 0;
+	int len = BUFF_SIZE - ind - 1;
+	char p = ' ', ch = 0;
 
 	UNUSED(size);
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
-		padd = '0';
+		p = '0';
 	if (is_negative)
-		extra_ch = '-';
+		ch = '-';
 	else if (flags & F_PLUS)
-		extra_ch = '+';
+		ch = '+';
 	else if (flags & F_SPACE)
-		extra_ch = ' ';
+		ch = ' ';
 
 	return (write_num(ind, buffer, flags, width, precision,
-		length, padd, extra_ch));
+		len, p, ch));
 }
