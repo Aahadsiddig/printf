@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * get_width - ia function that Calculates the width
+ * _width - ia function that Calculates the width
  * @format: Formatted string
  * @i: a List of arguments that will be printed.
  * @list: a list of arguments.
  * Return: width (w).
 */
 
-int get_width(const char *format, int *i, va_list list)
+int _width(const char *format, int *i, va_list list)
 {
 	int c_i;
 	int w = 0;
 
 	for (c_i = *i + 1; format[c_i] != '\0'; c_i++)
 	{
-		if (is_digit(format[c_i]))
+		if (u_digit(format[c_i]))
 		{
 			w *= 10;
 			w += format[c_i] - '0';

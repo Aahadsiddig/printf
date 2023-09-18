@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_reverse - a function that Prints reverse strings
+ * _reverse - a function that Prints reverse strings
  * @types: a List of arguments of the function
  * @buffer: a Buffer array
  * @flags: it Calculates active flags of the func
@@ -11,7 +11,7 @@
  * Return: a Numbers of chars that printed in the fun
 */
 
-int print_reverse(va_list types, char buffer[],
+int _reverse(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	char *st;

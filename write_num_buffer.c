@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * write_num - a function that writes a number using a bufffer
+ * write_num_buffer - a function that writes a number using a bufffer
  * @ind: Index for the  number starts on the buffer
  * @buffer: gets Buffer of func
  * @flags: gets flags of func
@@ -13,7 +13,7 @@
  * Return: Number of printed char
 */
 
-int write_num(int ind, char buffer[],
+int write_num_buffer(int ind, char buffer[],
 	int flags, int width, int prec,
 	int length, char padd, char extra_c)
 {

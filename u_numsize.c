@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * convert_size_number - a function that turns a number
+ * u_numsize - a function that turns a number
  *	to the specified size
  * @num: a number that will be casted.
  * @size: a number that is indicating the type
  * Return: turned number
 */
 
-long int convert_size_number(long int num, int size)
+long int u_numsize(long int num, int size)
 {
 	if (size == S_LONG)
 		return (num);

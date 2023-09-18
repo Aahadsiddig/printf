@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_percent - a function that Prints a percent sign
+ * _percent - a function that Prints a percent sign
  * @types: a List of arguments of the function
  * @buffer: Buffer array
  * @flags: it  Calculates active flags of the func
@@ -11,7 +11,7 @@
  * Return: Number of charactors printed in the func
 */
 
-int print_percent(va_list types, char buffer[],
+int _percent(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	UNUSED(types);

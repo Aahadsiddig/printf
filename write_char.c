@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_write_char - a functin that prints a string
+ * write_char - a functin that prints a string
  * @c: a char
  * @buffer: a Buffer array
  * @flags: it Calculates active flags of the function
@@ -11,7 +11,7 @@
  * Return: num of chars will be printed in the func
 */
 
-int handle_write_char(char c, char buffer[],
+int write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int x = 0;

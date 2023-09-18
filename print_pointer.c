@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_pointer - a function that Prints the value of a pointer variable
+ * _pointer - a function that Prints the value of a pointer variable
  * @types: a List of arguments of the function
  * @buffer: Buffer array
  * @flags: it Calculates active flags of the function
@@ -11,7 +11,7 @@
  * Return: Number of chars printed in the function
 */
 
-int print_pointer(va_list types, char buffer[],
+int _pointer(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	char c = 0, p = ' ';

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_rot13string - a funcyion that Print a string in rote 13
+ * _rot13string - a funcyion that Print a string in rote 13
  * @types: a List of arguments of the func
  * @buffer: Buffer array for the function
  * @flags: it Calculates active flags of the function
@@ -11,7 +11,7 @@
  * Return: Numbers of chars that printed in the func
 */
 
-int print_rot13string(va_list types, char buffer[],
+int _rot13string(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	char c;

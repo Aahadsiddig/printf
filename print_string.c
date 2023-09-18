@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_string - a function that prints a string
+ * _string - a function that prints a string
  * @types: a List of arguments
  * @buffer: Buffer array
  * @flags: it Calculates active flags in function
@@ -11,7 +11,7 @@
  * Return: Number of chars printed in the function
 */
 
-int print_string(va_list types, char buffer[],
+int _string(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	int len = 0, x;

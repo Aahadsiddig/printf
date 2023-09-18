@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_print - a function that prints an argument
+ * print - a function that prints an argument
  *	based on its type
  * @fmt: a Formatted string
  * @list: a List of arguments that will be printed.
@@ -14,16 +14,16 @@
  * Return: 1 or 2;
 */
 
-int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
+int print(const char *fmt, int *ind, va_list list, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	int x, unknownL = 0, printedC = -1;
 	fmt_t fmt_types[] = {
-		{'c', print_char}, {'s', print_string}, {'%', print_percent},
-		{'i', print_int}, {'d', print_int}, {'b', print_binary},
-		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
-		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
-		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
+		{'c', _char}, {'s', _string}, {'%', _percent},
+		{'i', _int}, {'d', _int}, {'b', _binary},
+		{'u', _unsigned}, {'o', _octal}, {'x', _hexadecimal},
+		{'X', _hexa_upper}, {'p', _pointer}, {'S', _non_printable},
+		{'r', _reverse}, {'R', _rot13string}, {'\0', NULL}
 	};
 	for (x = 0; fmt_types[x].fmt != '\0'; x++)
 		if (fmt[*ind] == fmt_types[x].fmt)

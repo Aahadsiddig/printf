@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_non_printable - a function that Prints ascii codes
+ * _non_printable - a function that Prints ascii codes
  *	of non printable chars in hexa
  * @types: a List of arguments of func
  * @buffer: Buffer array
@@ -12,7 +12,7 @@
  * Return: Number of charactors printed in the func
 */
 
-int print_non_printable(va_list types, char buffer[],
+int _non_printable(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	int x = 0, y = 0;
@@ -28,10 +28,10 @@ int print_non_printable(va_list types, char buffer[],
 
 	while (st[x] != '\0')
 	{
-		if (is_printable(st[x]))
+		if (u_printable(st[x]))
 			buffer[x + y] = st[x];
 		else
-			y += append_hexa_code(st[x], buffer, x + y);
+			y += u_hexa_code(st[x], buffer, x + y);
 
 		x++;
 	}
