@@ -16,9 +16,10 @@ int _precision(const char *format, int *i, va_list list)
 	if (format[c_i] != '.')
 		return (pr);
 
+	c_i++;
 	pr = 0;
 
-	for (c_i += 1; format[c_i] != '\0'; c_i++)
+	while (format[c_i] != '\0')
 	{
 	if (u_digit(format[c_i]))
 	{
@@ -34,7 +35,7 @@ int _precision(const char *format, int *i, va_list list)
 		else
 			break;
 	}
-
+	c_i++;
 	*i = c_i - 1;
 
 	return (pr);
