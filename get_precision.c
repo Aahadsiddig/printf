@@ -35,7 +35,7 @@ int _precision(const char *format, int *i, va_list list)
 		else
 			break;
 	}
-	c_i++;
+
 	*i = c_i - 1;
 
 	return (pr);
