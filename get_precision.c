@@ -10,33 +10,33 @@
 
 int _precision(const char *format, int *i, va_list list)
 {
-	int curr_i = *i;
-	int precision = -1;
+	int c_i = *i;
+	int pr = -1;
 
-	if (format[curr_i] != '.')
+	if (format[c_i] != '.')
+		return (pr);
+
+	pr = 0;
+
+	for (c_i += 1; format[c_i] != '\0'; c_i++)
 	{
-
-		return (precision);
-	}
-
-	curr_i++;
-
-	if (format[curr_i] == '*')
+	if (u_digit(format[c_i]))
 	{
-		va_arg(list, int);
-		curr_i++;
-	} else
-	{
-		precision = 0;
-
-		while (u_digit(format[curr_i]))
-		{
-			precision = precision * 10 + (format[curr_i] - '0');
-			curr_i++;
+		pr *= 10;
+		pr += format[c_i] - '0';
 		}
+		else if (format[c_i] == '*')
+		{
+			c_i++;
+			pr = va_arg(list, int);
+			break;
+		}
+		else
+			break;
 	}
-	*i = curr_i;
 
-	return (precision);
+	*i = c_i;
+
+	return (pr);
 }
 
