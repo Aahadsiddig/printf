@@ -43,17 +43,12 @@ typedef struct fmt fmt_t;
 int _printf(const char *format, ...);
 int print(const char *fmt, int *i,
 		va_list list, char buffer[], int flags, int width, int precision, int size);
-
-
-/* Funtions to print chars and strings */
 int _char(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int _string(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int _percent(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-
-/* Functions to print numbers */
 int _int(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int _binary(va_list types, char buffer[],
@@ -68,30 +63,18 @@ int _hexa_upper(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int _hexa(va_list types, char map_to[],
 		char buffer[], int flags, char flag_ch, int width, int precision, int size);
-
-/* Function to print non printable characters */
 int _non_printable(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-
-/* Funcion to print memory address */
 int _pointer(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-
-/* Funciotns to handle other specifiers */
 int _flags(const char *format, int *i);
 int _width(const char *format, int *i, va_list list);
 int _precision(const char *format, int *i, va_list list);
 int _size(const char *format, int *i);
-
-/*Function to print string in reverse*/
 int _reverse(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-
-/*Function to print a string in rot 13*/
 int _rot13string(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-
-/* width handler */
 int write_char(char c, char buffer[],
 		int flags, int width, int precision, int size);
 int write_num(int is_positive, int ind, char buffer[],
@@ -103,12 +86,9 @@ int write_pointer(char buffer[], int ind, int length,
 int write_unsign(int is_negative, int ind,
 		char buffer[],
 		int flags, int width, int precision, int size);
-
-/* UTILS */
 int u_printable(char);
 int u_hexa_code(char, char[], int);
 int u_digit(char);
-
 long int u_numsize(long int num, int size);
 long int u_unsize(unsigned long int num, int size);
 
