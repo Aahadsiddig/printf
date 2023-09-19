@@ -11,7 +11,7 @@
 int _precision(const char *format, int *i, va_list list)
 {
 	int curr_i = *i;
-	int precision = 0;
+	int precision = -1;
 
 	if (format[curr_i] != '.')
 	{
@@ -25,9 +25,10 @@ int _precision(const char *format, int *i, va_list list)
 	{
 		va_arg(list, int);
 		curr_i++;
-	}
-	else
+	} else
 	{
+		precision = 0;
+
 		while (u_digit(format[curr_i]))
 		{
 			precision = precision * 10 + (format[curr_i] - '0');
