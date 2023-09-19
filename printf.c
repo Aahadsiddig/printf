@@ -14,12 +14,9 @@ int _printf(const char *format, ...)
 	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
 	char buffer[BUFF_SIZE];
-
 	if (format == NULL)
 		return (-1);
-
 	va_start(list, format);
-
 	for (x = 0; format && format[x] != '\0'; x++)
 	{
 		if (format[x] != '%')
