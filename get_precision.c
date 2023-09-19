@@ -18,9 +18,11 @@ int _precision(const char *format, int *i, va_list list)
 		return (pr);
 	}
 
+	ci++;
+
 	pr = 0;
 
-	for (ci += 1; format[ci] != '\0'; ci++)
+	for (; format[ci] != '\0'; ci++)
 	{
 		if (u_digit(format[ci]))
 		{
