@@ -14,8 +14,8 @@
 int _char(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
-	char ch = va_arg(types, int);
-	return (write_char(ch, buffer, flags, width, precision, size));
+char ch = va_arg(types, int);
+return (write_char(ch, buffer, flags, width, precision, size));
 }
 
 
