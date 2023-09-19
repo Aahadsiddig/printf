@@ -10,28 +10,36 @@
 
 int _precision(const char *format, int *i, va_list list)
 {
-	int c_i = *i;
-	int pr = 0;
+	int x = *i + 1;
+	int pr = -1;
 
-	for (c_i += 1; format[c_i] != '\0'; c_i++)
+	if (format[x] != '.')
 	{
-		if (u_digit(format[c_i]))
+		return (pr);
+	}
+
+	x++;
+
+	pr = 0;
+
+	for (; format[x] != '\0'; x++)
+	{
+		if (u_digit(format[x]))
 		{
 			pr *= 10;
-			pr += format[c_i] - '0';
+			pr += format[x] - '0';
 		}
-		else if (format[c_i] == '*')
+		else if (format[x] == '*')
 		{
-			c_i++;
+			x++;
 			pr = va_arg(list, int);
-		break;
+			break;
 		}
 		else
 			break;
 	}
 
-	*i = c_i - 1;
+	*i = x - 1;
 
 	return (pr);
 }
-
