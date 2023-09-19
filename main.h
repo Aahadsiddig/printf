@@ -26,7 +26,6 @@
  * @fmt: The format.
  * @fn: The function associated.
  */
-
 struct fmt
 {
 	char fmt;
@@ -91,6 +90,7 @@ int u_hexa_code(char, char[], int);
 int u_digit(char);
 long int u_numsize(long int num, int size);
 long int u_unsize(unsigned long int num, int size);
+
 
 #endif
 
