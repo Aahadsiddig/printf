@@ -10,7 +10,7 @@
 
 int _precision(const char *format, int *i, va_list list)
 {
-	int c_i = *i;
+	int c_i = *i + 1;
 	int pr = -1;
 
 	if (format[c_i] != '.')
@@ -35,7 +35,7 @@ int _precision(const char *format, int *i, va_list list)
 			break;
 	}
 
-	*i = c_i;
+	*i = c_i - 1;
 
 	return (pr);
 }
