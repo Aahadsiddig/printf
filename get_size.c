@@ -11,16 +11,13 @@ int _size(const char *format, int *i)
 {
 	int c_i = *i + 1;
 	int s = 0;
-
 	if (format[c_i] == 'l')
 		s = S_LONG;
 	else if (format[c_i] == 'h')
 		s = S_SHORT;
-
 	if (s == 0)
 		*i = c_i - 1;
 	else
 		*i = c_i;
-
 	return (s);
 }
