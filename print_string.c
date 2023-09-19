@@ -2,12 +2,12 @@
 
 /**
  * _string - a function that prints a string
+ * @size: the size for the function
  * @types: a List of arguments
  * @buffer: Buffer array
  * @flags: it Calculates active flags in function
  * @width: width of the function
  * @precision: Precision specification of the function
- * @size: Size specifier of the function
  * Return: Number of chars printed in the function
 */
 
