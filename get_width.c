@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _width - ia function that Calculates the width
+ * _width - is function that Calculates the width
  * @format: Formatted string
  * @i: a List of arguments that will be printed.
  * @list: a list of arguments.
